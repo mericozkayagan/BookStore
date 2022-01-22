@@ -26,3 +26,16 @@ C:\Users\Meriç\source\repos\BookStore\BookStore\obj\Debug\net5.0\BookStore.dll
 C:\Users\Meriç\source\repos\BookStore\BookStore\obj\Debug\net5.0\ref\BookStore.dll
 C:\Users\Meriç\source\repos\BookStore\BookStore\obj\Debug\net5.0\BookStore.pdb
 C:\Users\Meriç\source\repos\BookStore\BookStore\obj\Debug\net5.0\BookStore.genruntimeconfig.cache
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Meriç\source\repos\BookStore\BookStore\obj\Debug\net5.0\BookStore.csproj.AssemblyReference.cache
+C:\Users\Meriç\source\repos\BookStore\BookStore\bin\Debug\net5.0\FluentValidation.dll
