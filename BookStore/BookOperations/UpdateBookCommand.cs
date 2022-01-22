@@ -16,7 +16,7 @@ namespace BookStore.BookOperations
             _context = context;
         }
 
-        public UpdateBookViewModel Handle()
+        public void Handle()
         {
             var book = _context.Books.FirstOrDefault(x => x.Id == BookId);
             if (book == null)
@@ -27,7 +27,7 @@ namespace BookStore.BookOperations
             book.GenreId = Model.GenreId != default ? Model.GenreId : book.GenreId;            
             book.Title = Model.Title != default ? Model.Title : book.Title;
             _context.Add(Model);
-            _context.SaveChanges();            
+            _context.SaveChanges();                  
         }
     }
     public class UpdateBookViewModel
