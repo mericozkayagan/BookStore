@@ -1,4 +1,5 @@
 ﻿using BookStore.DbOperation;
+using BookStore.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -18,6 +19,21 @@ namespace BookStore.DbOperations
                 {
                     return;
                 }
+                context.Genres.AddRange(
+                    new Genre
+                    {
+                        Name = "Personal Growth"
+
+                    }, new Genre
+                    {
+                        Name = "Sci Fi"
+
+                    }, new Genre
+                    {
+                        Name = "Romance"
+
+                    }
+                    );
                 context.Books.AddRange(
                     new Book
                     {
@@ -43,6 +59,18 @@ namespace BookStore.DbOperations
                         PageCount = 300,
                         PublishDate = new DateTime(2001, 11, 6)
                     });
+                context.Authors.AddRange(
+                    new Author
+                    {
+                        AuthorName = "Meriç Özkayagan",
+                        AuthorBirth = new DateTime(2001, 11, 11),
+                    },
+                    new Author
+                    {
+                        AuthorName = "Derin Özka",
+                        AuthorBirth = new DateTime(2001, 11, 9),
+                    }
+                    );
                 context.SaveChanges();
             }
         }

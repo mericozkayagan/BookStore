@@ -19,11 +19,7 @@ namespace BookStore.BookOperations
         }
         public void Handle()
         {
-            var book = _context.Books.FirstOrDefault(x => x.Title == Model.Title);
-            if (book != null)
-            {
-                throw new InvalidOperationException("Kitap zaten mevcut");
-            }
+            var book = _context.Books.FirstOrDefault(x => x.Title == Model.Title);            
             book = _mapper.Map<Book>(Model);            
             _context.Books.Add(book);
             _context.SaveChanges();

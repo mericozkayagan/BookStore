@@ -26,7 +26,7 @@ namespace BookStore.BookOperations
             
             book.GenreId = Model.GenreId != default ? Model.GenreId : book.GenreId;            
             book.Title = Model.Title != default ? Model.Title : book.Title;
-            _context.Add(Model);
+            _context.Update(book);
             _context.SaveChanges();                  
         }
     }
