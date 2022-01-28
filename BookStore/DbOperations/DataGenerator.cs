@@ -1,4 +1,4 @@
-﻿using BookStore.DbOperation;
+﻿
 using BookStore.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,13 +7,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookStore.DbOperations
+namespace BookStore.DbOperation
 {
     public class DataGenerator
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new Context(serviceProvider.GetRequiredService<DbContextOptions<Context>>()))
+            using (var context = new DbOperation.Context(serviceProvider.GetRequiredService<DbContextOptions<DbOperation.Context>>()))
             {
                 if (context.Books.Any())
                 {

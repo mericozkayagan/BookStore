@@ -7,6 +7,7 @@ using BookStore.Application.AuthorOperations.Queries.GetAuthorDetail;
 using BookStore.Application.AuthorOperations.Queries.GetAuthors;
 using BookStore.DbOperation;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,12 @@ namespace BookStore.Controllers
 {
     [ApiController]
     [Route("[controller]s")]
+    [Authorize]
     public class AuthorController : Controller
     {
-        private readonly Context _context;
+        private readonly IContext _context;
         private readonly IMapper _mapper;
-        public AuthorController(Context context, IMapper mapper)
+        public AuthorController(IContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

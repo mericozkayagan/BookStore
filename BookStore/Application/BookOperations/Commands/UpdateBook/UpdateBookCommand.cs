@@ -1,4 +1,5 @@
-﻿using BookStore.DbOperation;
+﻿
+using BookStore.DbOperation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,10 @@ namespace BookStore.BookOperations
 {
     public class UpdateBookCommand
     {
-        private readonly Context _context;
+        private readonly IContext _context;
         public int BookId { get; set; }
         public UpdateBookViewModel Model { get; set; }
-        public UpdateBookCommand(Context context)
+        public UpdateBookCommand(IContext context)
         {
             _context = context;
         }
@@ -25,8 +26,7 @@ namespace BookStore.BookOperations
             }
             
             book.GenreId = Model.GenreId != default ? Model.GenreId : book.GenreId;            
-            book.Title = Model.Title != default ? Model.Title : book.Title;
-            _context.Update(book);
+            book.Title = Model.Title != default ? Model.Title : book.Title;            
             _context.SaveChanges();                  
         }
     }

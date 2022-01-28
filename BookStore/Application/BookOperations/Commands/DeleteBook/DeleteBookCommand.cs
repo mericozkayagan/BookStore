@@ -1,4 +1,5 @@
-﻿using BookStore.DbOperation;
+﻿
+using BookStore.DbOperation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,9 @@ namespace BookStore.BookOperations
 {
     public class DeleteBookCommand
     {
-        private readonly Context _context;
+        private readonly IContext _context;
         public int BookId { get; set; }
-        public DeleteBookCommand(Context context)
+        public DeleteBookCommand(IContext context)
         {
             _context = context;
         }

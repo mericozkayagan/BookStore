@@ -9,9 +9,8 @@ namespace BookStore.Application.AuthorOperations.Commands.CreateAuthor
     public class CreateAuthorCommandValidator:AbstractValidator<CreateAuthorCommand>
     {
         public CreateAuthorCommandValidator()
-        {
-            RuleFor(x => x.Model.AuthorBirth).NotEmpty();
-            RuleFor(x => x.Model.AuthorName).NotEmpty();
+        {            
+            RuleFor(x => x.Model.AuthorName).NotEmpty().MinimumLength(2);
         }
     }
 }

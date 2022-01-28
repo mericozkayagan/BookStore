@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.BookOperations.GetBookDetail
 {
-    public class GetBookDetailValidator : AbstractValidator<GetBookDetailQuery>
+    public class GetBookDetailValidator : AbstractValidator<GetBookDetailsQuery>
     {
         public GetBookDetailValidator()
         {

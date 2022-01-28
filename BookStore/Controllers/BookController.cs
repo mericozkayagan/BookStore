@@ -7,6 +7,7 @@ using BookStore.BookOperations.UpdateBook;
 using BookStore.DbOperation;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,11 +19,12 @@ namespace BookStore.Controllers
 {
     [ApiController]
     [Route("[controller]s")]
+    [Authorize]
     public class BookController : Controller
     {
-        private readonly Context _context;
+        private readonly IContext _context;
         private readonly IMapper _mapper;
-        public BookController(Context context, IMapper mapper)
+        public BookController(IContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -41,7 +43,7 @@ namespace BookStore.Controllers
         {
             BookDetailViewModel result;
 
-            GetBookDetailQuery query = new GetBookDetailQuery(_context, _mapper);
+            GetBookDetailsQuery query = new GetBookDetailsQuery(_context, _mapper);
             query.BookId = id;
             GetBookDetailValidator validator = new GetBookDetailValidator();
             validator.ValidateAndThrow(query);

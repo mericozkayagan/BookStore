@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace BookStore.BookOperations
 {
-    public class GetBookDetailQuery
+    public class GetBookDetailsQuery
     {
-        private readonly Context _context;
+        private readonly IContext _context;
         private readonly IMapper _mapper;
         public int BookId { get; set; }
-        public GetBookDetailQuery(Context context, IMapper mapper)
+        public GetBookDetailsQuery(IContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

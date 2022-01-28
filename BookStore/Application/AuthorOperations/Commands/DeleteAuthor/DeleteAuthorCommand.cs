@@ -1,4 +1,5 @@
-﻿using BookStore.DbOperation;
+﻿
+using BookStore.DbOperation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,10 @@ namespace BookStore.Application.AuthorOperations.Commands.DeleteAuthor
 {
     public class DeleteAuthorCommand
     {
-        private readonly Context _context;
+        private readonly IContext _context;
         public int AuthorId { get; set; }
 
-        public DeleteAuthorCommand(Context context)
+        public DeleteAuthorCommand(IContext context)
         {
             _context = context;
         }

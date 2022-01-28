@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+
 using BookStore.DbOperation;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,11 @@ namespace BookStore.Application.AuthorOperations.Queries.GetAuthorDetail
 {
     public class GetAuthorDetailQuery
     {
-        private readonly Context _context;
+        private readonly IContext _context;
         private readonly IMapper _mapper;
         public int AuthorID { get; set; }
 
-        public GetAuthorDetailQuery(Context context, IMapper mapper)
+        public GetAuthorDetailQuery(IContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BookStore.Common;
+
 using BookStore.DbOperation;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,9 +12,9 @@ namespace BookStore.BookOperations
 {
     public class GetBooksQuery
     {
-        private readonly Context _context;
+        private readonly IContext _context;
         private readonly IMapper _mapper;
-        public GetBooksQuery(Context context, IMapper mapper)
+        public GetBooksQuery(IContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

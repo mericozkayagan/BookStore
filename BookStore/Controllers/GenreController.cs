@@ -4,8 +4,10 @@ using BookStore.Application.GenreOperations.Commands.DeleteGenre;
 using BookStore.Application.GenreOperations.Commands.UpdateGenre;
 using BookStore.Application.GenreOperations.Queries.GetGenreDetail;
 using BookStore.Application.GenreOperations.Queries.GetGenres;
+
 using BookStore.DbOperation;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -16,12 +18,13 @@ namespace BookStore.Controllers
 {
     [ApiController]
     [Route("[controller]s")]
+    [Authorize]
     public class GenreController : Controller
     {
-        private readonly Context _context;
+        private readonly IContext _context;
         private readonly IMapper _mapper;
 
-        public GenreController(Context context, IMapper mapper)
+        public GenreController(IContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -48,7 +51,7 @@ namespace BookStore.Controllers
         [HttpPost]
         public IActionResult AddGenre([FromBody] CreateGenreModel newGenre)
         {
-            CreateGenreCommand command = new CreateGenreCommand(_context);
+            CreateGenreCommand command = new CreateGenreCommand(_context,_mapper);
             command.Model = newGenre;
             CreateGenreCommandValidator validator = new CreateGenreCommandValidator();
             validator.ValidateAndThrow(command);

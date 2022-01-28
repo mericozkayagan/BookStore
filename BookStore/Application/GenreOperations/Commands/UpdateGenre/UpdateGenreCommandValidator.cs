@@ -11,6 +11,7 @@ namespace BookStore.Application.GenreOperations.Commands.UpdateGenre
         public UpdateGenreCommandValidator()
         {
             RuleFor(x => x.Model.Name).MinimumLength(2).When(x => x.Model.Name != string.Empty);
+            RuleFor(x => x.Model.Name).NotEmpty();
         }
     }
 }

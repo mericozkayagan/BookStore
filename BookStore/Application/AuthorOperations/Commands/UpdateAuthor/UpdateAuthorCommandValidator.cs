@@ -10,9 +10,8 @@ namespace BookStore.Application.AuthorOperations.Commands.UpdateAuthor
     public class UpdateAuthorCommandValidator : AbstractValidator<UpdateAuthorCommand>
     {
         public UpdateAuthorCommandValidator()
-        {
-            RuleFor(x => x.Model.AuthorBirth).NotEmpty();
-            RuleFor(x => x.Model.AuthorName).NotEmpty();
+        {           
+            RuleFor(x => x.Model.AuthorName).NotEmpty().MinimumLength(2);
         }
     }
 }

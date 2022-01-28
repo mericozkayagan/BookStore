@@ -10,12 +10,12 @@ namespace BookStore.Application.AuthorOperations.Commands.UpdateBook
     public class UpdateAuthorCommand
     {
         public UpdateAuthorModel Model { get; set; }
-        private readonly Context _context;        
+        private readonly IContext _context;        
         
         public int AuthorID { get; set; }
         
 
-        public UpdateAuthorCommand(Context context)
+        public UpdateAuthorCommand(IContext context)
         {
             _context = context;           
         }
@@ -27,8 +27,7 @@ namespace BookStore.Application.AuthorOperations.Commands.UpdateBook
                 throw new InvalidOperationException("Yazar bulunamadı");
             }
             author.AuthorBirth = Model.AuthorBirth != default ? Model.AuthorBirth : author.AuthorBirth;
-            author.AuthorName = Model.AuthorName != default ? Model.AuthorName : author.AuthorName;
-            _context.Update(author);
+            author.AuthorName = Model.AuthorName != default ? Model.AuthorName : author.AuthorName;            
             _context.SaveChanges();
 
         }
