@@ -45,7 +45,7 @@ namespace BookStore.Controllers
             query.AuthorID = id;
             GetAuthorDetailValidator validations = new GetAuthorDetailValidator();
             validations.ValidateAndThrow(query);
-            result = query.Handle();
+            var result = query.Handle();
 
             return Ok(result);
 
